@@ -1,0 +1,9 @@
+{
+  "name": "record_intent",
+  "pythonFunction": {
+    "name": "record_intent",
+    "pythonCode": "tools/record_intent/python_function/python_code.py",
+    "description": "Records the caller's intent, or counts an unclear answer (two re-attempts, then a human agent).\n\nArgs:\n  intent: 'fare', 'lost item', 'complaint', the spoken choice 'one'/'two'/'three', or 'unclear'.\n\nReturns:\n  dict: SET with the intent tag, RETRY with the attempt count, or TRANSFER after the third unclear answer."
+  },
+  "displayName": "record_intent"
+}

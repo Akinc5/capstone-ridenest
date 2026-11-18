@@ -1,0 +1,15 @@
+{
+  "name": "calculate_adjustment",
+  "pythonFunction": {
+    "name": "calculate_adjustment",
+    "pythonCode": "tools/calculate_adjustment/python_function/python_code.py",
+    "description": "Calculates credit adjustment quotes or lost item recovery fees.\n\nArgs:\n  ride_id: (REQUIRED) The identifier of the ride.\n  intent_type: The issue category: 'fare', 'lost item', or 'complaint'.\n  item_recovered: Whether a lost item was recovered (applies only to lost item).\n\nReturns:\n  dict: Exact monetary quote and fee calculations for the academic demo."
+  },
+  "displayName": "calculate_adjustment",
+  "toolFakeConfig": {
+    "codeBlock": {
+      "pythonCode": "tools/calculate_adjustment/tool_fake_config/code_block/python_code.py"
+    },
+    "enableFakeMode": false
+  }
+}

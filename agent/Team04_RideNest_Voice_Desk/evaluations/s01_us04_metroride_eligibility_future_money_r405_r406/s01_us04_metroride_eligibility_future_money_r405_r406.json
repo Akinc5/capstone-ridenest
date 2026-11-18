@@ -1,0 +1,21 @@
+{
+  "name": "3397cb7d-0157-4e46-91aa-011b0cadcea3",
+  "displayName": "s01_us04_metroride_eligibility_future_money_r405_r406",
+  "description": "US04 compare MetroRide R405 Dec31 vs R406 Jan1 eligibility, no future money",
+  "tags": ["US04", "P0", "S01", "BUSINESS_NEGATIVE"],
+  "scenario": {
+    "task": "Verify caller RN4001, then inquire about MetroRide Pool rides R405 (ends 2026-12-31) and R406 (ends 2027-01-01) for fare adjustment.",
+    "rubrics": ["The agent verifies the caller using rider ID RN4001, DOB 2000-04-12, and last 4 digits 4101.", "The agent checks ride R405 and confirms MetroRide Pool is supported on 2026-12-31, but future rides receive 0 rupees credit quote.", "The agent checks ride R406 and explains MetroRide Pool is unsupported on 2027-01-01 and transfers to a representative."],
+    "userFacts": [{
+      "name": "rider_id",
+      "value": "RN4001"
+    }, {
+      "name": "dob",
+      "value": "2000-04-12"
+    }, {
+      "name": "last4",
+      "value": "4101"
+    }],
+    "maxTurns": 10
+  }
+}

@@ -1,0 +1,121 @@
+{
+  "name": "606a37c3-6bb0-4252-a494-4a87d1ca3e7c",
+  "displayName": "Team04 RideNest Voice Desk",
+  "rootAgent": "Team04 RideNest Voice Desk",
+  "audioProcessingConfig": {
+    "synthesizeSpeechConfigs": {
+      "en-IN": {
+        "voice": "en-IN-Standard-A",
+        "speakingRate": 1.0
+      },
+      "en-US": {
+        "voice": "en-IN-Standard-A",
+        "speakingRate": 1.0
+      }
+    }
+  },
+  "loggingSettings": {
+    "conversationLoggingSettings": {
+      "retentionWindow": "31536000s"
+    }
+  },
+  "guardrails": ["Default Safety Guardrail", "Default Prompt Guardrail", "Card and Aadhaar Input Filter", "Crisis and Safety Filter", "Crisis Semantic LLM Policy", "Driver Privacy and Verified Output Policy"],
+  "modelSettings": {
+    "model": "gemini-3.1-flash-live"
+  },
+  "variableDeclarations": [{
+    "name": "disclaimer_played",
+    "description": "Whether the fleet policy disclaimer has been delivered",
+    "schema": {
+      "type": "BOOLEAN",
+      "default": false
+    }
+  }, {
+    "name": "fleet",
+    "description": "Fleet operator for the ride",
+    "schema": {
+      "type": "STRING",
+      "default": ""
+    }
+  }, {
+    "name": "intent_attempts",
+    "description": "Number of failed intent classification attempts",
+    "schema": {
+      "type": "INTEGER",
+      "default": 0.0
+    }
+  }, {
+    "name": "intent_tag",
+    "description": "Classified caller intent tag (fare, lost item, complaint)",
+    "schema": {
+      "type": "STRING",
+      "default": ""
+    }
+  }, {
+    "name": "mock_context",
+    "description": "Mock domain entities for rides, accounts, and fleet policies",
+    "schema": {
+      "type": "OBJECT",
+      "properties": {
+        "ride_info": {
+          "type": "OBJECT"
+        },
+        "rider_info": {
+          "type": "OBJECT"
+        }
+      }
+    }
+  }, {
+    "name": "now_override",
+    "description": "Fixed timestamp override for calculating ride age",
+    "schema": {
+      "type": "STRING",
+      "default": "2026-11-10T09:00:00"
+    }
+  }, {
+    "name": "ride_age_hours",
+    "description": "Elapsed hours between ride end and current time",
+    "schema": {
+      "type": "NUMBER",
+      "default": 0.0
+    }
+  }, {
+    "name": "ride_id",
+    "description": "Identifier of the ride in question",
+    "schema": {
+      "type": "STRING",
+      "default": ""
+    }
+  }, {
+    "name": "rider_id",
+    "description": "ID of the caller rider",
+    "schema": {
+      "type": "STRING",
+      "default": ""
+    }
+  }, {
+    "name": "transfer_reason",
+    "description": "Reason for transfer or escalation",
+    "schema": {
+      "type": "STRING",
+      "default": ""
+    }
+  }, {
+    "name": "verification_attempts",
+    "description": "Number of failed verification attempts",
+    "schema": {
+      "type": "INTEGER",
+      "default": 0.0
+    }
+  }, {
+    "name": "verified",
+    "description": "Whether the rider is successfully verified",
+    "schema": {
+      "type": "BOOLEAN",
+      "default": false
+    }
+  }],
+  "timeZoneSettings": {
+    "timeZone": "America/Los_Angeles"
+  }
+}

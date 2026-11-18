@@ -1,0 +1,67 @@
+{
+ "displayName": "g11_us06_fare_dispute_r415_rounding_credit51",
+ "tags": [
+  "US06",
+  "P1",
+  "G11",
+  "BOUNDARY"
+ ],
+ "golden": {
+  "turns": [
+   {
+    "steps": [
+     {
+      "userInput": {
+       "text": "Hi, rider ID RN4001, DOB 2000-04-12, last four 4101. Fare dispute for ride R415."
+      }
+     },
+     {
+      "expectation": {
+       "toolCall": {
+        "tool": "verify_caller",
+        "displayName": "verify_caller"
+       }
+      }
+     },
+     {
+      "expectation": {
+       "toolCall": {
+        "tool": "lookup_ride",
+        "displayName": "lookup_ride"
+       }
+      }
+     },
+     {
+      "expectation": {
+       "toolCall": {
+        "tool": "check_trip_log",
+        "displayName": "check_trip_log"
+       }
+      }
+     },
+     {
+      "expectation": {
+       "toolCall": {
+        "tool": "calculate_adjustment",
+        "displayName": "calculate_adjustment"
+       }
+      }
+     },
+     {
+      "expectation": {
+       "agentResponse": {
+        "role": "agent",
+        "chunks": [
+         {
+          "text": "51"
+         }
+        ]
+       },
+       "comparisonType": "CONTAINS"
+      }
+     }
+    ]
+   }
+  ]
+ }
+}

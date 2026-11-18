@@ -1,0 +1,32 @@
+{
+  "name": "crisis_safety_filter",
+  "displayName": "Crisis and Safety Filter",
+  "description": "Crisis and self-harm immediate support filter",
+  "enabled": true,
+  "action": {
+    "respondImmediately": {
+      "responses": [
+        {
+          "text": "I'm really sorry you're going through this. You are not alone, and help is available. If you are in immediate danger, please call 112 now. You can also call Tele-MANAS on 14416, free and open at all hours, to talk to a trained counsellor. I'm connecting you with a person now."
+        }
+      ]
+    }
+  },
+  "contentFilter": {
+    "bannedContentsInUserInput": [
+      "suicide",
+      "kill myself",
+      "end my life",
+      "self harm",
+      "in danger",
+      "hurt myself",
+      "want to die",
+      "immediate danger",
+      "don't want to live",
+      "do not want to live",
+      "end it all",
+      "being followed"
+    ],
+    "matchType": "WORD_BOUNDARY_STRING_MATCH"
+  }
+}

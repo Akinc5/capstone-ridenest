@@ -1,0 +1,52 @@
+{
+  "name": "4213dd89-755a-422f-a6be-1e1c3530b6de",
+  "displayName": "g01_us01_us06_fare_dispute_r401_credit500",
+  "tags": ["US01", "US06", "P0", "G01", "HAPPY_PATH"],
+  "golden": {
+    "turns": [{
+      "steps": [{
+        "userInput": {
+          "text": "Hello, my rider ID is RN4001, born 2000-04-12, last 4 digits are 4101. I want to dispute my fare on ride R401."
+        }
+      }, {
+        "expectation": {
+          "toolCall": {
+            "tool": "verify_caller",
+            "displayName": "verify_caller"
+          }
+        }
+      }, {
+        "expectation": {
+          "toolCall": {
+            "tool": "lookup_ride",
+            "displayName": "lookup_ride"
+          }
+        }
+      }, {
+        "expectation": {
+          "toolCall": {
+            "tool": "check_trip_log",
+            "displayName": "check_trip_log"
+          }
+        }
+      }, {
+        "expectation": {
+          "toolCall": {
+            "tool": "calculate_adjustment",
+            "displayName": "calculate_adjustment"
+          }
+        }
+      }, {
+        "expectation": {
+          "agentResponse": {
+            "role": "agent",
+            "chunks": [{
+              "text": "500"
+            }]
+          },
+          "comparisonType": "CONTAINS"
+        }
+      }]
+    }]
+  }
+}

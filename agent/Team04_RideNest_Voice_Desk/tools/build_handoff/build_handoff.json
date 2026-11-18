@@ -1,0 +1,15 @@
+{
+  "name": "build_handoff",
+  "pythonFunction": {
+    "name": "build_handoff",
+    "pythonCode": "tools/build_handoff/python_function/python_code.py",
+    "description": "Builds structured handoff telemetry for simulated routing to a human or fleet partner.\n\nArgs:\n  destination: Target endpoint: 'human' or 'fleet'.\n  intent_tag: Best known intent: 'fare', 'lost item', 'complaint', or empty.\n  fleet_tag: Identified fleet name or empty.\n  reason: Contextual reason for handoff.\n\nReturns:\n  dict: Structured handoff payload and policy disclaimer when applicable."
+  },
+  "displayName": "build_handoff",
+  "toolFakeConfig": {
+    "codeBlock": {
+      "pythonCode": "tools/build_handoff/tool_fake_config/code_block/python_code.py"
+    },
+    "enableFakeMode": false
+  }
+}

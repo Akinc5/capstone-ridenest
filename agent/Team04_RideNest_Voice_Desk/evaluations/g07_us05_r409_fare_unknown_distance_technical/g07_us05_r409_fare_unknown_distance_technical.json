@@ -1,0 +1,45 @@
+{
+  "name": "8e737c2c-1a77-4b0b-915e-6e073bde5e92",
+  "displayName": "g07_us05_r409_fare_unknown_distance_technical",
+  "tags": ["US05", "P0", "G07", "TECHNICAL_ERROR"],
+  "golden": {
+    "turns": [{
+      "steps": [{
+        "userInput": {
+          "text": "Hi, rider ID RN4001, DOB 2000-04-12, last four 4101. Fare dispute on ride R409."
+        }
+      }, {
+        "expectation": {
+          "toolCall": {
+            "tool": "verify_caller",
+            "displayName": "verify_caller"
+          }
+        }
+      }, {
+        "expectation": {
+          "toolCall": {
+            "tool": "lookup_ride",
+            "displayName": "lookup_ride"
+          }
+        }
+      }, {
+        "expectation": {
+          "toolCall": {
+            "tool": "check_trip_log",
+            "displayName": "check_trip_log"
+          }
+        }
+      }, {
+        "expectation": {
+          "agentResponse": {
+            "role": "agent",
+            "chunks": [{
+              "text": "explains distance is missing due to technical issue without claiming fare is right or wrong"
+            }]
+          },
+          "comparisonType": "SEMANTIC_SIMILARITY"
+        }
+      }]
+    }]
+  }
+}

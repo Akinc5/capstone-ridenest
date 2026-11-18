@@ -1,0 +1,21 @@
+{
+  "name": "5b1c88c4-a18e-4f6b-8056-3b4ef47b9777",
+  "displayName": "Team04 RideNest Voice Desk",
+  "description": "Root orchestrator for RideNest greeting, 3-factor verification, and specialist routing.",
+  "instruction": "agents/Team04_RideNest_Voice_Desk/instruction.txt",
+  "tools": ["build_handoff", "end_session", "get_ride_day_advisory", "verify_caller"],
+  "childAgents": ["Team04 Ride Support"],
+  "guardrails": ["Card and Aadhaar Input Filter", "Crisis Semantic LLM Policy", "Crisis and Safety Filter", "Default Prompt Guardrail", "Default Safety Guardrail", "Driver Privacy and Verified Output Policy"],
+  "beforeModelCallbacks": [{
+    "pythonCode": "agents/Team04_RideNest_Voice_Desk/before_model_callbacks/before_model_callbacks_01/python_code.py",
+    "description": "Initializes session variables on Turn 0"
+  }],
+  "afterModelCallbacks": [{
+    "pythonCode": "agents/Team04_RideNest_Voice_Desk/after_model_callbacks/after_model_callbacks_01/python_code.py",
+    "description": "Brand farewell injection on end_session"
+  }],
+  "afterToolCallbacks": [{
+    "pythonCode": "agents/Team04_RideNest_Voice_Desk/after_tool_callbacks/after_tool_callbacks_01/python_code.py",
+    "description": "Logs handoff reason to session variables safely on root"
+  }]
+}

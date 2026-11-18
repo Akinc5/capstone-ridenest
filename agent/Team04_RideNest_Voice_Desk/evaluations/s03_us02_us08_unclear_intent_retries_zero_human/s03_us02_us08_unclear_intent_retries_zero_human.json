@@ -1,0 +1,21 @@
+{
+  "name": "3a3c5e7e-3b0f-4dab-ac77-3f6fc0eb4b87",
+  "displayName": "s03_us02_us08_unclear_intent_retries_zero_human",
+  "description": "US02/08 unclear intent retries plus zero -\u003e immediate human",
+  "tags": ["US02", "US08", "P0", "S03", "HAPPY_PATH"],
+  "scenario": {
+    "task": "Caller authenticates as RN4001, provides unclear intent, and after being given options, says \u0027zero\u0027 or \u00270\u0027 for a human representative.",
+    "rubrics": ["The agent asks clarifying questions to identify whether the intent is fare dispute, lost item, or complaint.", "Upon receiving \u0027zero\u0027, \u00270\u0027, or human request, the agent immediately transfers to a human representative with no confirmation."],
+    "userFacts": [{
+      "name": "rider_id",
+      "value": "RN4001"
+    }, {
+      "name": "dob",
+      "value": "2000-04-12"
+    }, {
+      "name": "last4",
+      "value": "4101"
+    }],
+    "maxTurns": 10
+  }
+}

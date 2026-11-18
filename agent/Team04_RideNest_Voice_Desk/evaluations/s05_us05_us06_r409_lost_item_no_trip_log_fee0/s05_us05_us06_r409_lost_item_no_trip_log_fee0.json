@@ -1,0 +1,21 @@
+{
+  "name": "4c3dee2b-1b14-439d-9d47-00ccddde1687",
+  "displayName": "s05_us05_us06_r409_lost_item_no_trip_log_fee0",
+  "description": "US05/06 R409 lost item -\u003e no trip log and conditional pickup fee0",
+  "tags": ["US05", "US06", "P0", "S05", "HAPPY_PATH"],
+  "scenario": {
+    "task": "Caller authenticates as RN4001 and reports a lost item on ride R409 stating the item has not been recovered yet.",
+    "rubrics": ["The agent retrieves ride R409 without calling check_trip_log because it is a lost item inquiry, not a fare dispute.", "The agent computes the adjustment and confirms the lost item pickup fee is 0 rupees because the item is not recovered."],
+    "userFacts": [{
+      "name": "rider_id",
+      "value": "RN4001"
+    }, {
+      "name": "dob",
+      "value": "2000-04-12"
+    }, {
+      "name": "last4",
+      "value": "4101"
+    }],
+    "maxTurns": 10
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "name": "ea0044d2-5f28-4b56-926d-8d28d573049f",
+  "displayName": "s04_us06_duplicate_credit_r413_no_second_credit",
+  "description": "US06 R413 duplicate credit -\u003e no second credit",
+  "tags": ["US06", "P0", "S04", "BUSINESS_NEGATIVE"],
+  "scenario": {
+    "task": "Caller authenticates as RN4001 and requests a fare dispute credit for ride R413 which has already been credited.",
+    "rubrics": ["The agent retrieves ride R413 and calls calculate_adjustment.", "The agent explains that ride R413 has already received a credit and refuses a duplicate second credit."],
+    "userFacts": [{
+      "name": "rider_id",
+      "value": "RN4001"
+    }, {
+      "name": "dob",
+      "value": "2000-04-12"
+    }, {
+      "name": "last4",
+      "value": "4101"
+    }],
+    "maxTurns": 10
+  }
+}

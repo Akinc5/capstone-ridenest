@@ -1,0 +1,17 @@
+{
+  "name": "driver_privacy_policy",
+  "displayName": "Driver Privacy and Verified Output Policy",
+  "description": "Prevents exposure of driver personal data and unverified monetary amounts",
+  "enabled": true,
+  "action": {
+    "respondImmediately": {
+      "responses": [{
+        "text": "For your safety and privacy, driver contact details and live location are protected. Any adjustment quotes are provided directly through system verification."
+      }]
+    }
+  },
+  "llmPolicy": {
+    "prompt": "The agent must never expose the driver\u0027s phone number, driver\u0027s personal phone, vehicle registration number, license plate, or live GPS location. The agent must never fabricate or state refund or fee amounts that were not directly computed and returned by a backend tool. Any monetary adjustment is an academic quote only.",
+    "policyScope": "AGENT_RESPONSE"
+  }
+}

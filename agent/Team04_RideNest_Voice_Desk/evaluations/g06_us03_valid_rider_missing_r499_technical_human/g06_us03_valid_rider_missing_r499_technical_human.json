@@ -1,0 +1,38 @@
+{
+  "name": "01a73108-888f-4718-afe4-71dc9e540e64",
+  "displayName": "g06_us03_valid_rider_missing_r499_technical_human",
+  "tags": ["US03", "P0", "G06", "ESCALATION"],
+  "golden": {
+    "turns": [{
+      "steps": [{
+        "userInput": {
+          "text": "Hi, rider ID RN4001, DOB 2000-04-12, last four 4101. Check my ride R499."
+        }
+      }, {
+        "expectation": {
+          "toolCall": {
+            "tool": "verify_caller",
+            "displayName": "verify_caller"
+          }
+        }
+      }, {
+        "expectation": {
+          "toolCall": {
+            "tool": "lookup_ride",
+            "displayName": "lookup_ride"
+          }
+        }
+      }, {
+        "expectation": {
+          "agentResponse": {
+            "role": "agent",
+            "chunks": [{
+              "text": "reports system lookup failure and transfers to representative"
+            }]
+          },
+          "comparisonType": "SEMANTIC_SIMILARITY"
+        }
+      }]
+    }]
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "name": "check_trip_log",
+  "pythonFunction": {
+    "name": "check_trip_log",
+    "pythonCode": "tools/check_trip_log/python_function/python_code.py",
+    "description": "Verifies route logs and telemetry distance for fare dispute investigations.\n\nArgs:\n  ride_id: (REQUIRED) The identifier of the ride being disputed.\n\nReturns:\n  dict: Trip log status (CONTINUE, NO_ROUTE, or MISSING_DISTANCE)."
+  },
+  "displayName": "check_trip_log",
+  "toolFakeConfig": {
+    "codeBlock": {
+      "pythonCode": "tools/check_trip_log/tool_fake_config/code_block/python_code.py"
+    },
+    "enableFakeMode": false
+  }
+}

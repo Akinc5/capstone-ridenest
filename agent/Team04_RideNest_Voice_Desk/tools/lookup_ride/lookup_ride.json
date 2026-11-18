@@ -1,0 +1,15 @@
+{
+  "name": "lookup_ride",
+  "pythonFunction": {
+    "name": "lookup_ride",
+    "pythonCode": "tools/lookup_ride/python_function/python_code.py",
+    "description": "Retrieves trip information and fleet eligibility for a verified caller.\n\nArgs:\n  ride_id: (REQUIRED) The unique identifier of the ride (e.g. R401).\n\nReturns:\n  dict: Ride details including fleet, fare, age, and fleet support status."
+  },
+  "displayName": "lookup_ride",
+  "toolFakeConfig": {
+    "codeBlock": {
+      "pythonCode": "tools/lookup_ride/tool_fake_config/code_block/python_code.py"
+    },
+    "enableFakeMode": false
+  }
+}

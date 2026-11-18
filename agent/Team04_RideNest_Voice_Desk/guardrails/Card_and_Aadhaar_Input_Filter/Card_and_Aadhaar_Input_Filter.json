@@ -1,0 +1,24 @@
+{
+  "name": "card_aadhaar_filter",
+  "displayName": "Card and Aadhaar Input Filter",
+  "description": "Blocks 12-digit Aadhaar and 16-digit card numbers (plain or in groups of four)",
+  "enabled": true,
+  "action": {
+    "respondImmediately": {
+      "responses": [
+        {
+          "text": "Please do not share card or Aadhaar numbers. I only need your rider ID, date of birth and the last four phone digits."
+        }
+      ]
+    }
+  },
+  "contentFilter": {
+    "bannedContentsInUserInput": [
+      "\\b\\d{12}\\b",
+      "\\b\\d{16}\\b",
+      "\\b\\d{4}[ -]\\d{4}[ -]\\d{4}\\b",
+      "\\b\\d{4}[ -]\\d{4}[ -]\\d{4}[ -]\\d{4}\\b"
+    ],
+    "matchType": "REGEXP_MATCH"
+  }
+}

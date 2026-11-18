@@ -1,0 +1,16 @@
+{
+  "name": "crisis_semantic_policy",
+  "displayName": "Crisis Semantic LLM Policy",
+  "description": "Semantic evaluation of user crisis, self-harm, suicidal ideation, or immediate danger",
+  "enabled": true,
+  "action": {
+    "respondImmediately": {
+      "responses": [{
+        "text": "I\u0027m really sorry you\u0027re going through this. You are not alone, and help is available. If you are in immediate danger, please call 112 now. You can also call Tele-MANAS on 14416, free and open at all hours, to talk to a trained counsellor. I\u0027m connecting you with a person now."
+      }]
+    }
+  },
+  "llmPolicy": {
+    "prompt": "Evaluate whether the user input expresses crisis, suicidal intent, self-harm, severe psychological distress, or being in immediate physical danger. If detected, intercept immediately. Do not flag benign tiredness, ordinary bad days, fatigue, or mundane transit complaints."
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "name": "get_ride_day_advisory",
+  "pythonFunction": {
+    "name": "get_ride_day_advisory",
+    "pythonCode": "tools/get_ride_day_advisory/python_function/python_code.py",
+    "description": "Fetches brief ride-day advisory and weather forecast from institutional public API.\n\nArgs:\n  city: Name of the city for advisory.\n  latitude: Latitude coordinate for advisory location.\n  longitude: Longitude coordinate for advisory location.\n\nReturns:\n  dict: Ride day conditions, temperature, and advisory statement."
+  },
+  "displayName": "get_ride_day_advisory",
+  "toolFakeConfig": {
+    "codeBlock": {
+      "pythonCode": "tools/get_ride_day_advisory/tool_fake_config/code_block/python_code.py"
+    },
+    "enableFakeMode": true
+  }
+}

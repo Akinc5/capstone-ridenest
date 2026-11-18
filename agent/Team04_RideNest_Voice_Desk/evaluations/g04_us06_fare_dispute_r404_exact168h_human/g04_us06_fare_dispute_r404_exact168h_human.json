@@ -1,0 +1,52 @@
+{
+  "name": "6323e0c2-6edf-49c1-a886-cec1bd9d9fc9",
+  "displayName": "g04_us06_fare_dispute_r404_exact168h_human",
+  "tags": ["US06", "P0", "G04", "ESCALATION"],
+  "golden": {
+    "turns": [{
+      "steps": [{
+        "userInput": {
+          "text": "Hi, rider ID RN4001, DOB 2000-04-12, last four 4101. Fare dispute on ride R404."
+        }
+      }, {
+        "expectation": {
+          "toolCall": {
+            "tool": "verify_caller",
+            "displayName": "verify_caller"
+          }
+        }
+      }, {
+        "expectation": {
+          "toolCall": {
+            "tool": "lookup_ride",
+            "displayName": "lookup_ride"
+          }
+        }
+      }, {
+        "expectation": {
+          "toolCall": {
+            "tool": "check_trip_log",
+            "displayName": "check_trip_log"
+          }
+        }
+      }, {
+        "expectation": {
+          "toolCall": {
+            "tool": "calculate_adjustment",
+            "displayName": "calculate_adjustment"
+          }
+        }
+      }, {
+        "expectation": {
+          "agentResponse": {
+            "role": "agent",
+            "chunks": [{
+              "text": "informs ride is older than seven days and connects to a representative"
+            }]
+          },
+          "comparisonType": "SEMANTIC_SIMILARITY"
+        }
+      }]
+    }]
+  }
+}

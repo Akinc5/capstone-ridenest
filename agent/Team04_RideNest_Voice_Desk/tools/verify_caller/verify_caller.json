@@ -1,0 +1,15 @@
+{
+  "name": "verify_caller",
+  "pythonFunction": {
+    "name": "verify_caller",
+    "pythonCode": "tools/verify_caller/python_function/python_code.py",
+    "description": "Verifies the caller identity using 3-factor authentication: rider ID, DOB, and phone last 4 digits.\n\nArgs:\n  rider_id: (REQUIRED) Rider ID (e.g. RN4001).\n  dob: (REQUIRED) Date of birth (YYYY-MM-DD or spoken format).\n  last4: (REQUIRED) Last four digits of registered phone number.\n\nReturns:\n  dict: Verification outcome, status, and retry or transfer recommendation."
+  },
+  "displayName": "verify_caller",
+  "toolFakeConfig": {
+    "codeBlock": {
+      "pythonCode": "tools/verify_caller/tool_fake_config/code_block/python_code.py"
+    },
+    "enableFakeMode": false
+  }
+}

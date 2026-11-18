@@ -1,0 +1,52 @@
+{
+  "name": "ac9d494d-7b7f-4962-9618-490d2f9c26b8",
+  "displayName": "g02_us06_fare_dispute_r402_exact24h_credit100",
+  "tags": ["US06", "P0", "G02", "HAPPY_PATH"],
+  "golden": {
+    "turns": [{
+      "steps": [{
+        "userInput": {
+          "text": "Hi, rider ID RN4001, DOB 2000-04-12, last four 4101. I need to review my fare on ride R402."
+        }
+      }, {
+        "expectation": {
+          "toolCall": {
+            "tool": "verify_caller",
+            "displayName": "verify_caller"
+          }
+        }
+      }, {
+        "expectation": {
+          "toolCall": {
+            "tool": "lookup_ride",
+            "displayName": "lookup_ride"
+          }
+        }
+      }, {
+        "expectation": {
+          "toolCall": {
+            "tool": "check_trip_log",
+            "displayName": "check_trip_log"
+          }
+        }
+      }, {
+        "expectation": {
+          "toolCall": {
+            "tool": "calculate_adjustment",
+            "displayName": "calculate_adjustment"
+          }
+        }
+      }, {
+        "expectation": {
+          "agentResponse": {
+            "role": "agent",
+            "chunks": [{
+              "text": "100"
+            }]
+          },
+          "comparisonType": "CONTAINS"
+        }
+      }]
+    }]
+  }
+}

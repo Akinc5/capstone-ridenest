@@ -1,0 +1,31 @@
+{
+  "name": "413fcc9b-243b-4db0-8213-511b27aa8b7d",
+  "displayName": "g05_us01_blocked_rider_rn4003_human",
+  "tags": ["US01", "P0", "G05", "ESCALATION"],
+  "golden": {
+    "turns": [{
+      "steps": [{
+        "userInput": {
+          "text": "Hello, rider ID RN4003, date of birth 1995-02-15, last four digits 4103. I need help."
+        }
+      }, {
+        "expectation": {
+          "toolCall": {
+            "tool": "verify_caller",
+            "displayName": "verify_caller"
+          }
+        }
+      }, {
+        "expectation": {
+          "agentResponse": {
+            "role": "agent",
+            "chunks": [{
+              "text": "informs account requires review and connects to human representative"
+            }]
+          },
+          "comparisonType": "SEMANTIC_SIMILARITY"
+        }
+      }]
+    }]
+  }
+}

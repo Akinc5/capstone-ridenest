@@ -1,0 +1,35 @@
+{
+  "name": "08876496-7b8e-4b9f-b721-c3bf32467e33",
+  "displayName": "Team04 Ride Support",
+  "description": "Specialist subagent handling fare disputes, lost items, complaints, and fleet handoffs.",
+  "instruction": "agents/Team04_Ride_Support/instruction.txt",
+  "tools": [
+    "build_handoff",
+    "calculate_adjustment",
+    "check_trip_log",
+    "end_session",
+    "get_ride_day_advisory",
+    "lookup_ride",
+    "record_intent"
+  ],
+  "guardrails": [
+    "Card and Aadhaar Input Filter",
+    "Crisis Semantic LLM Policy",
+    "Crisis and Safety Filter",
+    "Default Prompt Guardrail",
+    "Default Safety Guardrail",
+    "Driver Privacy and Verified Output Policy"
+  ],
+  "afterModelCallbacks": [
+    {
+      "pythonCode": "agents/Team04_Ride_Support/after_model_callbacks/after_model_callbacks_01/python_code.py",
+      "description": "Brand farewell injection on end_session"
+    }
+  ],
+  "afterToolCallbacks": [
+    {
+      "pythonCode": "agents/Team04_Ride_Support/after_tool_callbacks/after_tool_callbacks_01/python_code.py",
+      "description": "Logs handoff reason to session variables safely"
+    }
+  ]
+}
